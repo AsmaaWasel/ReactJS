@@ -1,0 +1,91 @@
+// Define variables for colors
+$info-bg-color: #cce5ff;
+$info-border-color: #b8daff;
+$info-text-color: #004085;
+
+$warning-bg-color: #fff3cd;
+$warning-border-color: #ffeeba;
+$warning-text-color: #856404;
+
+$error-bg-color: #f8d7da;
+$error-border-color: #f5c6cb;
+$error-text-color: #721c24;
+
+$success-bg-color: #d4edda;
+$success-border-color: #c3e6cb;
+$success-text-color: #155724;
+
+// Define a mixin to style alerts
+@mixin alert-style($bg-color, $border-color, $text-color) {
+  padding: 10px;
+  border: 1px dotted $border-color;
+  background-color: $bg-color;
+  color: $text-color;
+  border-radius: 5px;
+  margin: 10px 0;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      display: flex;
+      align-items: center;
+
+      svg {
+        cursor: pointer;
+        font-size: 24px;
+      }
+
+      h4 {
+        margin: 0 10px;
+        font-size: 18px;
+      }
+    }
+
+    svg {
+      cursor: pointer;
+      font-size: 24px;
+    }
+  }
+
+  .message {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    margin-top: 1.1rem;
+    text-align: justify; // Ensure all lines start at the same point
+  }
+}
+
+// Apply mixin based on alert type
+.alert-wrapper {
+  &.alert-info {
+    @include alert-style($info-bg-color, $info-border-color, $info-text-color);
+  }
+
+  &.alert-warning {
+    @include alert-style(
+      $warning-bg-color,
+      $warning-border-color,
+      $warning-text-color
+    );
+  }
+
+  &.alert-error {
+    @include alert-style(
+      $error-bg-color,
+      $error-border-color,
+      $error-text-color
+    );
+  }
+
+  &.alert-success {
+    @include alert-style(
+      $success-bg-color,
+      $success-border-color,
+      $success-text-color
+    );
+  }
+}
