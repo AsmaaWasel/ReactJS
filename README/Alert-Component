@@ -1,0 +1,10 @@
+# Alert-Component
+It is react+vite project .
+Represent different type of alerts
+-info alert , warning alert , error alert , success alert.
+
+Ideas of the project 💡
+✅ Reusable Component
+✅ Soild principles (Single responsibility & Open/Close principle)
+✅ Use Sass
+✅ TypeScript
