@@ -6,9 +6,11 @@ const App = () => {
     <ProductCard key={product.id} product={product} />
   ));
   return (
-    <div className="m-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 rounded-md">
-      {RenderProductList}
-    </div>
+    <main className="container">
+      <div className="m-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 rounded-md">
+        {RenderProductList}
+      </div>
+    </main>
   );
 };
 

@@ -3,14 +3,14 @@ import { IProduct } from "../interfaces";
 const ProductList: IProduct[] = [
   {
     id: 1,
-    title: "Sport Running Shoes",
-    description: "High-quality running shoes for the best performance.",
-    imageUrl: "https://images.unsplash.com/photo-1606813901444-aa5dcb5ac72e",
-    price: 120.0,
-    colors: ["#FF0000", "#0000FF", "#008000"], // Red, Blue, Green
+    title: "Smartphone",
+    description: "Latest smartphone with advanced features.",
+    imageUrl: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+    price: 999.99,
+    colors: ["#000000", "#C0C0C0", "#FFD700"], // Black, Silver, Gold
     category: {
-      name: "Footwear",
-      imageUrl: "https://images.unsplash.com/photo-1605733160314-b23f1ef7c30e",
+      name: "Mobile Phones",
+      imageUrl: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
     },
   },
   {
@@ -27,14 +27,14 @@ const ProductList: IProduct[] = [
   },
   {
     id: 3,
-    title: "Smart Watch",
-    description: "A smart watch with various health tracking features.",
-    imageUrl: "https://images.unsplash.com/photo-1512508497407-800ee3b0e0d6",
-    price: 199.99,
-    colors: ["#000000", "#C0C0C0", "#B76E79"], // Black, Silver, Rose Gold
+    title: "Smartphone",
+    description: "Latest smartphone with advanced features.",
+    imageUrl: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+    price: 999.99,
+    colors: ["#000000", "#C0C0C0", "#FFD700"], // Black, Silver, Gold
     category: {
-      name: "Wearables",
-      imageUrl: "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7",
+      name: "Mobile Phones",
+      imageUrl: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
     },
   },
   {
@@ -63,14 +63,14 @@ const ProductList: IProduct[] = [
   },
   {
     id: 6,
-    title: "Digital Camera",
-    description: "Compact digital camera with high resolution.",
-    imageUrl: "https://images.unsplash.com/photo-1519183071298-a2962a5a880b",
-    price: 300.0,
-    colors: ["#000000", "#C0C0C0", "#FF0000"], // Black, Silver, Red
+    title: "Wireless Headphones",
+    description: "Noise-cancelling headphones with superb sound quality.",
+    imageUrl: "https://images.unsplash.com/photo-1511367461989-f85a21fda167",
+    price: 250.0,
+    colors: ["#000000", "#FFFFFF", "#808080"], // Black, White, Grey
     category: {
-      name: "Cameras",
-      imageUrl: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f",
+      name: "Electronics",
+      imageUrl: "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9",
     },
   },
   {
@@ -87,26 +87,26 @@ const ProductList: IProduct[] = [
   },
   {
     id: 8,
-    title: "4K Television",
-    description: "Experience ultra high-definition visuals with this 4K TV.",
-    imageUrl: "https://images.unsplash.com/photo-1593228372069-d0763b0e92a3",
-    price: 800.0,
-    colors: ["#000000", "#808080", "#C0C0C0"], // Black, Grey, Silver
+    title: "Wireless Headphones",
+    description: "Noise-cancelling headphones with superb sound quality.",
+    imageUrl: "https://images.unsplash.com/photo-1511367461989-f85a21fda167",
+    price: 250.0,
+    colors: ["#000000", "#FFFFFF", "#808080"], // Black, White, Grey
     category: {
-      name: "Home Entertainment",
-      imageUrl: "https://images.unsplash.com/photo-1593228372069-d0763b0e92a3",
+      name: "Electronics",
+      imageUrl: "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9",
     },
   },
   {
     id: 9,
-    title: "Electric Kettle",
-    description: "Boil water quickly with this electric kettle.",
-    imageUrl: "https://images.unsplash.com/photo-1563191911-53d4b49337a3",
-    price: 30.0,
-    colors: ["#FFFFFF", "#000000", "#C0C0C0"], // White, Black, Silver
+    title: "Wireless Headphones",
+    description: "Noise-cancelling headphones with superb sound quality.",
+    imageUrl: "https://images.unsplash.com/photo-1511367461989-f85a21fda167",
+    price: 250.0,
+    colors: ["#000000", "#FFFFFF", "#808080"], // Black, White, Grey
     category: {
-      name: "Kitchen Appliances",
-      imageUrl: "https://images.unsplash.com/photo-1579758629934-2120e1fc2bc6",
+      name: "Electronics",
+      imageUrl: "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9",
     },
   },
   {
@@ -118,7 +118,7 @@ const ProductList: IProduct[] = [
     colors: ["#000000", "#C0C0C0", "#FFD700"], // Black, Silver, Gold
     category: {
       name: "Mobile Phones",
-      imageUrl: "https://images.unsplash.com/photo-1512499617640-c2f99912a27d",
+      imageUrl: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
     },
   },
 ];
