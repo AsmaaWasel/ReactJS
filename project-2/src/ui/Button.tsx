@@ -1,15 +1,19 @@
-import { ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 
-interface Iprops {
+interface Iprops extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  className: string;
+  className?: string;
+  width?: "w-full" | "w-fit";
 }
 
-const Button = ({ className, children }: Iprops) => {
+const Button = ({ className, children, width = "w-full", ...rest }: Iprops) => {
   return (
-    <Button className={className} w-full p-2 rounded-md text-white>
+    <button
+      className={`${className} ${width} p-2 rounded-md text-white`}
+      {...rest}
+    >
       {children}
-    </Button>
+    </button>
   );
 };
 

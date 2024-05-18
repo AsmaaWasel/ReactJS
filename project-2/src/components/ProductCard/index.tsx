@@ -1,18 +1,15 @@
-// interface Iprops {
-
-// }
 import Button from "../../ui/Button";
 import Image from "../Image";
 const ProductCard = () => {
   return (
-    <div className="border rounded-md p-2 flex flex-col">
+    <div className="border rounded-md p-2 flex flex-col  w-72">
       <Image
         imageURL="./public/assets/sport-running-shoes.jpg"
         alt="Sport Running Shoes"
         className="w-60 rounded-md"
       />
       <h4>Sport-Running-Shoes</h4>
-      <p>
+      <p className="mt-2 text-sm text-gray-600">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
         asperiores deserunt at nisi ad doloribus ratione obcaecati aut facilis
         eligendi officia omnis, unde eum nihil, accusantium reiciendis adipisci
@@ -32,8 +29,8 @@ const ProductCard = () => {
         />
       </div>
       <div className="flex  items-center justify-between space-x-2 my-5">
-        <Button className="bg-indigo-600 ">Edit</Button>
-        <Button className="bg-red-600 w-full">Delete</Button>
+        <Button className="bg-indigo-600">Edit</Button>
+        <Button className="bg-red-600">Delete</Button>
       </div>
     </div>
   );
