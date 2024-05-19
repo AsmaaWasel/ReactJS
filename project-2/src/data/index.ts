@@ -1,6 +1,6 @@
-import { IProduct } from "../interfaces";
+import { IFormInput, IProduct } from "../interfaces";
 
-const ProductList: IProduct[] = [
+export const productList: IProduct[] = [
   {
     id: 1,
     title: "Smartphone",
@@ -123,4 +123,30 @@ const ProductList: IProduct[] = [
   },
 ];
 
-export default ProductList;
+// Array of form inputs
+export const formInputs: IFormInput[] = [
+  {
+    id: "productTitle",
+    name: "title",
+    label: "Product Title",
+    type: "text",
+  },
+  {
+    id: "productDescription",
+    name: "description",
+    label: "Product Description",
+    type: "text",
+  },
+  {
+    id: "productImageUrl",
+    name: "imageUrl",
+    label: "Product Image URL",
+    type: "url",
+  },
+  {
+    id: "productPrice",
+    name: "price",
+    label: "Product Price",
+    type: "number",
+  },
+];

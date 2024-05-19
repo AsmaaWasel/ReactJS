@@ -1,14 +1,19 @@
-interface Category {
-  name: string;
-  imageUrl: string;
-}
-
 export interface IProduct {
   id: number;
   title: string;
   description: string;
   imageUrl: string;
-  price: number;
+  price: string;
   colors: string[];
-  category: Category;
+  category: {
+    name: string;
+    imageUrl: string;
+  };
+}
+
+export interface IFormInput {
+  id: string;
+  name: string;
+  label: string;
+  type: string;
 }

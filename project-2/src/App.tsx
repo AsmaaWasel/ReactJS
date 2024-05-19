@@ -1,21 +1,54 @@
 import { useState } from "react";
 import ProductCard from "./components/ProductCard";
 import Modal from "./components/ui/Model";
-import ProductList from "./data";
+import { IProduct } from "./interfaces";
+import { formInputs, productList } from "./data";
+import { Input } from "@headlessui/react";
 
 const App = () => {
-  const RenderProductList = ProductList.map((product) => (
-    <ProductCard key={product.id} product={product} />
-  ));
+  const [product, setProduct] = useState<IProduct>({
+    id: 1,
+    title: "",
+    description: "",
+    imageUrl: "",
+    price: "",
+    colors: [""],
+    category: {
+      name: "",
+      imageUrl: "",
+    },
+  });
   const [isOpen, setIsOpen] = useState(true);
 
-  function openModel() {
+  // Handlers
+  const openModel = () => {
     setIsOpen(true);
-  }
+  };
 
-  function closeModel() {
+  const closeModel = () => {
     setIsOpen(false);
-  }
+  };
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value, name } = e.target;
+    setProduct({ ...product, [name]: value });
+  };
+  // Renders
+  const RenderProductList = productList.map((product: IProduct) => (
+    <ProductCard key={product.id} product={product} />
+  ));
+  const RenderFormInputList = formInputs.map((input) => (
+    <div className="h-auto flex flex-col">
+      <label htmlFor={input.name}>{input.label}</label>
+      <Input
+        type="text"
+        id={input.id}
+        name={input.name}
+        className="mb-[5px] text-sm font-medium text-gray-700"
+        value={""}
+        onChange={onChangeHandler}
+      />
+    </div>
+  ));
 
   return (
     <main className="container">
@@ -28,6 +61,7 @@ const App = () => {
         {RenderProductList}
       </div>
       <Modal isOpen={isOpen} closeModel={closeModel} title="Add A New Product">
+        {RenderFormInputList}
         <div className="flex items-center space-x-2">
           <button className="bg-indigo-600 hover:bg-indigo-800 p-2 rounded-md text-white w-full">
             Submit

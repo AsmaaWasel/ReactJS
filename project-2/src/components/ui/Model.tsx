@@ -15,16 +15,6 @@ interface Iprops {
 }
 
 const Modal = ({ isOpen, closeModel, title, children }: Iprops) => {
-  //   const [isOpen, setIsOpen] = useState(true);
-
-  //   function open() {
-  //     setIsOpen(true);
-  //   }
-
-  //   function close() {
-  //     setIsOpen(false);
-  //   }
-
   return (
     <>
       <Transition appear show={isOpen}>
@@ -53,11 +43,6 @@ const Modal = ({ isOpen, closeModel, title, children }: Iprops) => {
                       {title}
                     </DialogTitle>
                   )}
-
-                  <p className="mt-2 text-sm/6 text-white/50">
-                    Your payment has been successfully submitted. We’ve sent you
-                    an email with all of the details of your order.
-                  </p>
                   <div className="mt-4">{children}</div>
                 </DialogPanel>
               </TransitionChild>
