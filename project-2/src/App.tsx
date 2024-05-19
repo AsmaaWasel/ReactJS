@@ -32,6 +32,7 @@ const App = () => {
     const { value, name } = e.target;
     setProduct({ ...product, [name]: value });
   };
+  console.log(product);
   // Renders
   const RenderProductList = productList.map((product: IProduct) => (
     <ProductCard key={product.id} product={product} />
@@ -44,7 +45,7 @@ const App = () => {
         id={input.id}
         name={input.name}
         className="mb-[5px] text-sm font-medium text-gray-700"
-        value={""}
+        value={product[input.name]}
         onChange={onChangeHandler}
       />
     </div>
