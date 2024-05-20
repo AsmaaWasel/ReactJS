@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import ProductCard from "./components/ProductCard";
 import Modal from "./components/ui/Model";
 import { IProduct } from "./interfaces";
 import { formInputs, productList } from "./data";
 import { Input } from "@headlessui/react";
+import { productValidation } from "./validation";
+import ErrorMessage from "./components/ErrorMessage";
 
 const App = () => {
-  const [product, setProduct] = useState<IProduct>({
+  const defaultProductObject = {
     id: 1,
     title: "",
     description: "",
@@ -17,6 +19,13 @@ const App = () => {
       name: "",
       imageUrl: "",
     },
+  };
+  const [product, setProduct] = useState<IProduct>(defaultProductObject);
+  const [errors, setErrors] = useState({
+    title: "",
+    description: "",
+    imageUrl: "",
+    price: "",
   });
   const [isOpen, setIsOpen] = useState(true);
 
@@ -31,14 +40,39 @@ const App = () => {
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target;
     setProduct({ ...product, [name]: value });
+    setErrors({ ...errors, [name]: "" });
   };
-  console.log(product);
+
+  const onCancel = () => {
+    console.log("cancel");
+    closeModel();
+    setProduct(defaultProductObject);
+  };
+  const onSubmitHandler = (event: FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
+    const { title, description, imageUrl, price } = product;
+    const errors = productValidation({
+      title,
+      description,
+      imageUrl,
+      price,
+    });
+    const hasErrorMsg =
+      Object.values(errors).some((value) => value === "") &&
+      Object.values(errors).every((value) => value === "");
+    console.log(hasErrorMsg);
+    if (!hasErrorMsg) {
+      setErrors(errors);
+      return;
+    }
+    console.log("Send data to the server");
+  };
   // Renders
   const RenderProductList = productList.map((product: IProduct) => (
     <ProductCard key={product.id} product={product} />
   ));
   const RenderFormInputList = formInputs.map((input) => (
-    <div className="h-auto flex flex-col">
+    <div className="h-auto flex flex-col" key={input.id}>
       <label htmlFor={input.name}>{input.label}</label>
       <Input
         type="text"
@@ -48,6 +82,7 @@ const App = () => {
         value={product[input.name]}
         onChange={onChangeHandler}
       />
+      {errors[input.name] && <ErrorMessage msg={errors[input.name]} />}
     </div>
   ));
 
@@ -63,14 +98,20 @@ const App = () => {
       </div>
       <Modal isOpen={isOpen} closeModel={closeModel} title="Add A New Product">
         {RenderFormInputList}
-        <div className="flex items-center space-x-2">
+        <form
+          className="flex items-center space-x-2"
+          onSubmit={onSubmitHandler}
+        >
           <button className="bg-indigo-600 hover:bg-indigo-800 p-2 rounded-md text-white w-full">
             Submit
           </button>
-          <button className="bg-gray-600  hover:bg-gray-800 p-2 rounded-md text-white w-full">
+          <button
+            className="bg-gray-600  hover:bg-gray-800 p-2 rounded-md text-white w-full"
+            onClick={onCancel}
+          >
             Canel
           </button>
-        </div>
+        </form>
       </Modal>
     </main>
   );
